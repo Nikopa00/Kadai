@@ -19,9 +19,11 @@ namespace Kadai01
         public Form1()
         {
             InitializeComponent();
+
+
         }
 
-        private void TashizanButton_Click(object sender, EventArgs e)
+        public void TashizanButton_Click(object sender, EventArgs e)
         {
             // TextBoxの値取得
             /// Parse = 文字列を数字に変換
@@ -32,11 +34,27 @@ namespace Kadai01
 
             // public Class1の初期値としてTextBoxとLabelの値を使用する
             var Culum = new Class1(_num, _num2);
-
-            // Labelにreturnで返した合計値を格納する
-            // 本当はintでやりたかったがそれはおいおい
             ResultLabel1.Text = Culum.Get().ToString();
+        }
 
+        private void HikizanButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void KakezanButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WarizanButton_Click(object sender, EventArgs e)
+        {
+            _num = int.Parse(InputTextBox1.Text);
+
+            _num2 = int.Parse(ResultLabel1.Text);
+
+            var Culum = new Class1(_num, _num2);
+            ResultLabel1.Text = Culum.Get4().ToString();
         }
     }
 }
