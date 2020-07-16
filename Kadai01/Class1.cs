@@ -9,46 +9,39 @@ namespace Kadai01
 {
     public class Class1
     {
-        private int _textvalue;
-        private int _labelvalue;
         private int _data;
         private int _data2;
         private int _data3;
         private int _data4;
 
-        public Class1(int Textvalue, int Labelvalue)
-        {
-            _textvalue = Textvalue;
-            _labelvalue = Labelvalue;
-
-            _data = _textvalue + _labelvalue;
-            _data2 = _labelvalue - _textvalue;
-            _data3 = _textvalue * _labelvalue;
-
-            try
-            {
-                _data4 = _labelvalue / _textvalue;
-            }
-            catch(DivideByZeroException e)
-            {
-                MessageBox.Show(e.Message);
-            }
-        }
+        public int _textvalue { get; set; } = 0;
+        public int _labelvalue { get; set; } = 0;
 
         public int Get()
         {
+            _data = _textvalue + _labelvalue;
             return _data;
         }
         public int Get2()
         {
+            _data2 = _labelvalue - _textvalue;
             return _data2;
         }
         public int Get3()
         {
+            _data3 = _textvalue * _labelvalue;
             return _data3;
         }
         public int Get4()
         {
+            if (_textvalue != 0)
+            {
+                _data4 = _labelvalue / _textvalue;
+            }
+            else
+            {
+                throw new DivideByZeroException(MessageBox.Show("0 で除算しようとしました。").ToString());
+            }
             return _data4;
         }
     }
