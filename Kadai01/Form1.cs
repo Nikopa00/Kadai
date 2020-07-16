@@ -38,6 +38,7 @@ namespace Kadai01
             ResultLabel1.Text = _dataes.Get().ToString();
 
             // 以下を記載する際はClass1のGet()を削除する
+            // こっちの方が呼び出される側がスッキリするが、呼び出し側で計算することになる
             //int result = _dataes._labelvalue / _dataes._textvalue;
             //ResultLabel1.Text = result.ToString();
         }
